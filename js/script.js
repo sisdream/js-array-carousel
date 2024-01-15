@@ -42,3 +42,34 @@ document.getElementsByClassName('item')[0].classList.add('active');
 thumbsCont.innerHTML = thumbs;
 document.getElementsByClassName('thumb')[0].classList.add('active');
 
+// funzione div next
+next.addEventListener("click", function() {
+    if(activePosition < images.length -1){
+        activePosition = activePosition + 1;
+    } else {
+        activePosition = 0;
+    }
+
+    document.querySelector(".item.active").classList.remove('active');
+    document.getElementsByClassName('item')[activePosition].classList.add('active');
+
+    document.querySelector(".thumb.active").classList.remove('active');
+    document.getElementsByClassName('thumb')[activePosition].classList.add('active');
+});
+
+// funzione div prev
+
+prev.addEventListener("click", function(){
+
+    if(activePosition === 0){
+        activePosition = images.length -1
+    } else {
+        activePosition = activePosition - 1;
+    }  
+
+   document.querySelector(".item.active").classList.remove('active');
+   document.getElementsByClassName('item')[activePosition].classList.add('active');
+
+   document.querySelector(".thumb.active").classList.remove('active');
+   document.getElementsByClassName('thumb')[activePosition].classList.add('active');
+});
