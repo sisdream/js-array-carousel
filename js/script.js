@@ -13,6 +13,30 @@ const images = [
     "img/05.jpg"
 ];
 
+// creiamo il ciclo for
+
+for( let i = 0; i < images.length; i++){
+  const image = images[i];
+  items += `
+        <div class="item">
+             <img src=${image}>
+        </div>
+    `;
+
+    thumbs += `
+        <div class="thumb">
+            <img src=${image}>
+        </div>
+    `;
+};
+
+
+
+
+
+
+
+
 
 
 
