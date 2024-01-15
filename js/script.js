@@ -1,23 +1,23 @@
-// creiamo la variabile
-
-const thumbCont = document.querySelector("thumbs");
-const itemsCont = document.querySelector("items");
+// elementi html
+const thumbsCont = document.querySelector('div.thumbs');
+const itemsCont = document.querySelector('div.items');
 let items = "";
-let thumbs ="";
+let thumbs = "";
 
+// array 
 const images = [
-    "img/01.jpg",
-    "img/02.jpg",
-    "img/03.jpg",
-    "img/04.jpg",
-    "img/05.jpg"
+    "./consegna/img/01.webp",
+    "./consegna/img/02.webp",
+    "./consegna/img/03.webp",
+    "./consegna/img/04.webp",
+    "./consegna/img/05.webp",
 ];
 
-// creiamo il ciclo for
+// ciclo for
+for (let i = 0; i < images.length; i++) {
+    const image = images[i];
 
-for( let i = 0; i < images.length; i++){
-  const image = images[i];
-  items += `
+    items += `
         <div class="item">
              <img src=${image}>
         </div>
@@ -30,18 +30,15 @@ for( let i = 0; i < images.length; i++){
     `;
 };
 
+// generatore img
 
+let activePosition = 0;
+const prev = document.querySelector('div.prev');
+const next = document.querySelector('div.next');
 
+itemsCont.innerHTML = items;
+document.getElementsByClassName('item')[0].classList.add('active');
 
-
-
-
-
-
-
-
-
-
-
-
+thumbsCont.innerHTML = thumbs;
+document.getElementsByClassName('thumb')[0].classList.add('active');
 
