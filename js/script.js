@@ -31,7 +31,7 @@ for (let i = 0; i < images.length; i++) {
 };
 
 setInterval(function(){ 
-    next.click()
+    next.click()z
 },3000);
 
 
@@ -49,8 +49,7 @@ thumbsCont.innerHTML = thumbs;
 document.getElementsByClassName('thumb')[0].classList.add('active');
 
 // funzione div next
-next.addEventListener("click", function() {
-    
+next.addEventListener("click", function(){
     if(activePosition < images.length -1){
         activePosition = activePosition + 1;
     } else {
