@@ -30,9 +30,15 @@ for (let i = 0; i < images.length; i++) {
     `;
 };
 
+setInterval(function(){ 
+    next.click()
+},3000);
+
+
 // generatore img
 
 let activePosition = 0;
+
 const prev = document.querySelector('div.prev');
 const next = document.querySelector('div.next');
 
@@ -44,12 +50,13 @@ document.getElementsByClassName('thumb')[0].classList.add('active');
 
 // funzione div next
 next.addEventListener("click", function() {
+    
     if(activePosition < images.length -1){
         activePosition = activePosition + 1;
     } else {
         activePosition = 0;
     }
-
+   
     document.querySelector(".item.active").classList.remove('active');
     document.getElementsByClassName('item')[activePosition].classList.add('active');
 
