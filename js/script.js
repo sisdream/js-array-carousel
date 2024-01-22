@@ -30,8 +30,8 @@ for (let i = 0; i < images.length; i++) {
     `;
 };
 
-setInterval(function(){ 
-    next.click()z
+let myInterval = setInterval(function(){ 
+    next.click();
 },3000);
 
 
@@ -55,12 +55,24 @@ next.addEventListener("click", function(){
     } else {
         activePosition = 0;
     }
-   
+  
     document.querySelector(".item.active").classList.remove('active');
     document.getElementsByClassName('item')[activePosition].classList.add('active');
 
     document.querySelector(".thumb.active").classList.remove('active');
     document.getElementsByClassName('thumb')[activePosition].classList.add('active');
+});
+
+itemsCont.addEventListener("mouseenter",function(){
+    console.log("evento iniziato");
+    clearInterval(myInterval);
+});
+
+itemsCont.addEventListener("mouseleave",function(){
+    console.log("evento finito")
+    myInterval = setInterval(function(){ 
+        next.click();
+    },3000);
 });
 
 // funzione div prev
